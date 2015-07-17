@@ -1,0 +1,13 @@
+<h1>Create User!</h1>
+<%= show_errors %>
+<form action="<%= user_url %>" method="POST">
+  <%= auth_token %>
+
+  Username:
+    <%= text_field(:user,:username) %>
+    <br>
+  Password:
+    <%= password_field(:user,:password) %>
+    <br>
+    <input type="submit" value="Submit">
+</form>
