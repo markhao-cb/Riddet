@@ -1,6 +1,6 @@
 class SubsController < ApplicationController
   before_action :check_logged_in
-  before_action :check_moderator, only: :edit
+  before_action :check_moderator, only: [:edit, :update]
 
   def index
     @subs = Sub.all
@@ -28,6 +28,8 @@ class SubsController < ApplicationController
   end
 
   def edit
+    @sub = Sub.find(params[:id])
+    render :edit
   end
 
   def update
